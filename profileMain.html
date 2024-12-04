@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 프로필</title>
+<link rel="stylesheet" href="profileMain.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=edit" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=edit" />
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const myProfileBtn = document.querySelector(".my_profile");
+        const myTypingBtn = document.querySelector(".my_typing");
+        const editProfileDetails = document.querySelector(".edit_profile_details");
+        const typingBox = document.querySelector(".typing_detail_box");
+
+        // 초기 상태
+        editProfileDetails.style.display = "block";
+        typingBox.style.display = "none";
+
+        // 총타수 버튼 클릭 이벤트
+        myTypingBtn.addEventListener("click", function () {
+            editProfileDetails.style.display = "none";
+            typingBox.style.display = "block";
+        });
+
+        // 나의 프로필 버튼 클릭 이벤트
+        myProfileBtn.addEventListener("click", function () {
+            editProfileDetails.style.display = "block";
+            typingBox.style.display = "none";
+        });
+
+        // 화살표 버튼 클릭 시 텍스트 변경
+        const levels = ["(초급용)", "(중급용)", "(고급용)"];
+        let currentLevelIndex = 0;
+
+        const levelText = document.querySelector(".text h6");
+        const prevButton = document.querySelector(".explanation button:nth-child(1)");
+        const nextButton = document.querySelector(".explanation button:nth-child(3)");
+
+        // 이전 화살표 클릭
+        prevButton.addEventListener("click", function () {
+            currentLevelIndex = (currentLevelIndex - 1 + levels.length) % levels.length;
+            levelText.textContent = levels[currentLevelIndex];
+        });
+
+        // 다음 화살표 클릭
+        nextButton.addEventListener("click", function () {
+            currentLevelIndex = (currentLevelIndex + 1) % levels.length;
+            levelText.textContent = levels[currentLevelIndex];
+        });
+    });
+</script>
+<style>
+    .material-symbols-outlined {
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        position: absolute;
+        pointer-events: none;
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 30
+    }
+</style>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar_logo">
+                <h1><a href="">타코</a></h1>
+            </div>
+
+            <ul class="navbar_menu">
+                <li><a href=""><b>타자하기</b></a></li>
+                <li><a href=""><b>타자 랭킹</b></a></li>
+                <li><a href=""><b>문의하기</b></a></li>
+            </ul>
+
+            <ul class="navbar_users">
+                <li><a href="">회원가입</a></li>
+                <li><a href="">로그인</a></li>
+                <li>
+                <a href="">
+                    <div class="navbar_box">
+                        <img class="navbar_profile" src="https://github.com/Ada-Taco-Project/imgs/blob/main/20210417_122949.jpg?raw=true" alt="프로필 사진">
+                    </div>
+                </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="main_profile">
+                <div class="main_profile_box">
+                    <div class="main_profile_background"></div>
+
+                    <div class="main_profile_img_container">
+                        <div class="main_profile_img_box">
+                            <img src="https://github.com/Ada-Taco-Project/imgs/blob/main/20210417_122949.jpg?raw=true" alt="프로필 사진" class="main_profile_img">    
+                        </div>
+                        <h2>와플이</h2>
+                    </div>
+
+                    <div class="main_profile_detail">
+                        <b>
+                            <span>
+                                <p>이메일</p>
+                                <p>asdf123@gmail.com</p>
+                            </span>
+                            <span>
+                                <p>Github</p>
+                                <p>asdf123</p>
+                            </span>
+                            <span style="color: #637EA6;">
+                                <p>총합 최고타수</p>
+                                <p>522타</p>
+                            </span>
+                            <span style="color: #637EA6;">
+                                <p>총합 평균타수</p>
+                                <p>368타</p>
+                            </span>
+                        </b>
+                    </div>
+
+                    <div class="main_profile_logout">
+                        <button class="logout">로그아웃</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main_edit_profile">
+                <div class="edit_profile_title">
+                    <h1>Edit Profile</h1>
+                </div>
+
+                <div class="edit_profile_menu">
+                        <span class="my_profile">
+                            <p><b>나의 프로필</b></p>
+                        </span>
+                        <span class="my_typing">
+                            <p><b>총타수</b></p>
+                        </span>
+                </div>
+
+
+                <div class="edit_profile_details">
+                    <div class="edit_details_box">
+                        <div class="details_input_box">
+                            <div class="input-container">
+                                <div class="input-box">
+                                    <p>아이디</p>
+                                    <div class="detail_input">
+                                        <input type="text" name="userid" id="id" placeholder="아이디(4~16자)">
+                                        <span class="material-symbols-outlined">edit</span>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="input-container">
+                                <div class="input-box">
+                                    <p>닉네임</p>
+                                    <div class="detail_input">
+                                        <input type="text" name="usernm" id="nm" placeholder="닉네임(12자 내외)">
+                                        <span class="material-symbols-outlined">edit</span>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="input-container">
+                                <div class="input-box">
+                                    <p>Github(선택사항)</p>
+                                    <div class="detail_input">
+                                        <input type="text" name="Github" id="Github" placeholder="Github링크 또는 아이디">
+                                        <span class="material-symbols-outlined">edit</span>
+                                    </div>      
+                                </div>
+                            </div>  
+                        </div>
+
+                        <div class="details_input_box">
+                            <div class="input-container">
+                                <div class="input-box">
+                                    <p>비밀번호</p>
+                                    <div class="detail_input">
+                                        <input type="password" name="userpw" id="pw" placeholder="비밀번호">
+                                        <span class="material-symbols-outlined">edit</span>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="input-container">
+                                <div class="input-box">
+                                    <p>이메일</p>
+                                    <div class="detail_input">
+                                        <input type="email" name="email" id="email" placeholder="닉네임(12자 내외)">
+                                        <span class="material-symbols-outlined">edit</span>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="input-container">
+                                <div class="input-box">
+                                    <p>자주 사용하는 언어</p>
+                                    <div class="detail_input">
+                                        <input type="text" name="Github" id="Github" placeholder="자주 사용하는 언어">
+                                        <span class="material-symbols-outlined">edit</span>
+                                    </div>      
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+
+                <div class="typing_detail_box">
+                    <div class="explanation">
+                        <button>&#9664;</button>
+                        <div class="text">
+                            <h1>타자랭킹</h1>
+                            <h6>(초급용)</h6>
+                        </div>
+                        <button>&#9654;</button>
+                    </div>
+
+
+                    <div class="typing_BOX" style="display: flex;">
+                        <div class="typing_userBox_Container">
+                            <div class="typing_userBox_animation1">
+                                <div class="typing_userBox1_hover">
+                                    <div class="typing_userBox1">
+                                        <div class="typing_userBox1_detail">
+                                            <img src="https://github.com/Ada-Taco-Project/imgs/blob/main/devicon_c.png?raw=true" alt="C언어">
+                                            <h1>C</h1>
+                                        </div>
+                                    </div>
+                                    <div class="typing_userBox1_box"></div>
+                                </div>
+                            </div>
+    
+                            <div class="typing_userBox_animation2">
+                                <div class="typing_userBox2">
+                                    <div class="typing_userBox2_detail" align="center">
+                                        <img src="https://github.com/Ada-Taco-Project/imgs/blob/main/devicon_c.png?raw=true" alt="C언어">
+                                        <table>
+                                            <tr>
+                                                <td align="left">최고타수</td>
+                                                <td align="left">501타</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left">정확도</td>
+                                                <td align="left">425타</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left">정확도</td>
+                                                <td align="left">97.2%</td>
+                                            </tr>
+                                        </table>
+                                        <button><b>연습하기</b></button>
+                                    </div>
+                                </div>
+                                <div class="typing_userBox_box"></div>
+                            </div>
+                        </div>
+
+                        <div class="typing_userBox_Container">
+                            <div class="typing_userBox_animation1">
+                                <div class="typing_userBox1_hover">
+                                    <div class="typing_userBox1">
+                                        <div class="typing_userBox1_detail">
+                                            <img src="https://github.com/Ada-Taco-Project/imgs/blob/main/devicon_c.png?raw=true" alt="C언어">
+                                            <h1>C</h1>
+                                        </div>
+                                    </div>
+                                    <div class="typing_userBox1_box"></div>
+                                </div>
+                            </div>
+    
+                            <div class="typing_userBox_animation2">
+                                <div class="typing_userBox2">
+                                    <div class="typing_userBox2_detail" align="center">
+                                        <img src="https://github.com/Ada-Taco-Project/imgs/blob/main/devicon_c.png?raw=true" alt="C언어">
+                                        <table>
+                                            <tr>
+                                                <td align="left">최고타수</td>
+                                                <td align="left">501타</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left">정확도</td>
+                                                <td align="left">425타</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left">정확도</td>
+                                                <td align="left">97.2%</td>
+                                            </tr>
+                                        </table>
+                                        <button><b>연습하기</b></button>
+                                    </div>
+                                </div>
+                                <div class="typing_userBox_box"></div>
+                            </div>
+                        </div>
+
+                        <div class="typing_userBox_Container">
+                            <div class="typing_userBox_animation1">
+                                <div class="typing_userBox1_hover">
+                                    <div class="typing_userBox1">
+                                        <div class="typing_userBox1_detail">
+                                            <img src="https://github.com/Ada-Taco-Project/imgs/blob/main/devicon_c.png?raw=true" alt="C언어">
+                                            <h1>C</h1>
+                                        </div>
+                                    </div>
+                                    <div class="typing_userBox1_box"></div>
+                                </div>
+                            </div>
+    
+                            <div class="typing_userBox_animation2">
+                                <div class="typing_userBox2">
+                                    <div class="typing_userBox2_detail" align="center">
+                                        <img src="https://github.com/Ada-Taco-Project/imgs/blob/main/devicon_c.png?raw=true" alt="C언어">
+                                        <table>
+                                            <tr>
+                                                <td align="left">최고타수</td>
+                                                <td align="left">501타</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left">정확도</td>
+                                                <td align="left">425타</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left">정확도</td>
+                                                <td align="left">97.2%</td>
+                                            </tr>
+                                        </table>
+                                        <button><b>연습하기</b></button>
+                                    </div>
+                                </div>
+                                <div class="typing_userBox_box"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

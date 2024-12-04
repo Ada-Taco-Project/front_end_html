@@ -1,0 +1,413 @@
+body{
+    margin: 0;
+}
+
+/* header css */
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar {
+    padding: 0 115px 0 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    color: gray;
+    box-shadow: 0 0 4px;
+    height: 60px;
+}
+
+.navbar_logo {
+    color: black;
+    font-size: 24px;
+}
+
+.navbar_menu li{
+    padding: 8px 30px;
+    color: black;
+}
+
+.navbar_menu a:hover{
+    color: #263A99;
+    border-bottom: 3px solid #263A99;
+}
+
+
+.navbar_users li{
+    align-content: center;
+    padding: 8px 8px;
+    font-size: 12px;
+    transition: all 0.3s;
+}
+
+.navbar_users a:hover {
+    color: gray;
+}
+
+.navbar_box{
+    width: 40px;
+    height: 40px; 
+    border-radius: 70%;
+    overflow: hidden;
+    box-shadow: 0 0 1.5px;
+}
+
+.navbar_profile{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 1035px) {
+    .navbar_users li{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .navbar_menu{
+        display: none;
+    }
+
+    .navbar{
+        justify-content:flex-start;
+    }
+}
+
+/* body */
+
+.container{
+    display: flex;
+    height: 80px;
+}
+
+.main_profile{
+    border-right: 0.1px solid #ebebeb ;
+    display: flex;
+    height: 110vh;
+    width: 33%;
+    /* background-color:aliceblue; */
+}
+
+
+.main_profile_box{
+    /* background-color: #ffffff; */
+    width: 62%;
+    margin: auto 10px auto 90px;
+    position: relative;
+}
+
+.main_profile_background{
+    background-color: #89ACE0;
+    height: 180px;
+    width: 100%;
+    position: relative;
+}
+
+.main_profile_img_container{
+    /* background-color: aqua; */
+    position: absolute;
+    width: 100%;
+    top: 90px;
+    text-align: center;
+}
+
+.main_profile_img_box{
+    /* background-color: #263A99; */
+    height: 155px;
+    width: 155px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #9A9A9A;
+}
+
+.main_profile_img{
+    height: 155px;
+    width: 155px;
+    object-fit: cover;
+}
+
+.main_profile_detail{
+    margin-top: 145px;
+    font-size: 12px;
+}
+
+.main_profile_detail span{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+    margin: 6px 4px 0px 4px;
+}
+
+.main_profile_logout{
+    /* background-color: #263A99; */
+    margin: 70px 0 30px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout{
+    margin-bottom: 5px;
+    width: 120px;
+    height: 35px;
+    border-radius: 5px;
+    border: 0.1px solid #A4A4A4;
+}
+
+.logout:active{ 
+    filter: brightness(90%);    
+}
+
+/* //////////////////////////////// */
+
+.main_edit_profile{
+    width: 100%;
+    position: relative;
+    top: 1px;
+}
+
+.edit_profile_title{
+    background-color: #E5F0FF;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    border-bottom: 1px solid #DCE2E9;
+}
+
+.edit_profile_title h1{
+    margin: 42px 20px 10px 40px;
+}
+
+.edit_profile_menu{
+    margin-top: 100px;
+    background-color: hsl(215, 100%, 95%);
+    display: flex;
+    height: 40px;
+}
+
+.edit_profile_menu span{
+    margin: auto 0px auto 50px;
+}
+
+.my_profile{
+    padding: 0px 8px;
+}
+
+.my_typing{
+    padding: 0 5px;
+}
+
+.edit_profile_menu p{
+    font-size: 12px;
+}
+
+.edit_profile_menu span:hover{
+    border-bottom: 2px solid #0175BE;
+}
+
+.edit_profile_details{
+    width: 100%;
+    height: 100vh;
+    justify-items: center;
+}
+
+/* 전체 컨테이너 스타일 */
+.edit_details_box {
+    margin-top: 20px;
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.detail_input{
+    position: relative;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.detail_input input{
+    width: 450px;
+    height:40px;
+    padding: 10px;
+    margin: 15px 0;
+    border: 2px solid #9F9F9F;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.detail_input_box1{
+    background-color: #9A9A9A;
+    width: 100vh;
+    height: 100vh;
+}
+
+
+.input-container p{
+    margin: 0 0 -9px 3px;
+    font-size: 17px;
+}
+
+.input-box {
+    margin-top: 20px;
+}
+
+.typing_detail_box{
+    width: 100%;
+    height: 100vh;
+    justify-items: center;
+    margin: 0;
+}
+
+.explanation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+}
+
+.explanation button {
+    background: none;
+    border: none; 
+    font-size: 45px; 
+    color: #89ACE0; 
+    padding: 0 10px; 
+    cursor: pointer; 
+}
+
+.explanation button:active {
+    color: #637EA6;
+}
+
+.text {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.text h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.text h6 {
+    color: #89ACE0;
+    font-size: 14px;
+}
+
+.text h1, h6{
+    margin: 10px;
+}
+
+.typing_BOX {
+    display: flex;
+    flex-wrap: wrap; /* 줄 바꿈 허용 */
+    justify-content: space-between; /* 가로로 박스 정렬 */
+    gap: 20px; /* 박스 간 간격 */
+    padding: 20px; /* 내부 여백 */
+    width: 100%; /* 컨테이너의 전체 너비 사용 */
+    box-sizing: border-box; /* 패딩 포함 크기 계산 */
+}
+
+.typing_userBox_Container {
+    flex: 0 1 calc(30% - 20px); /* 한 줄에 3개의 박스 배치 */
+    display: flex;
+    flex-direction: column; /* 박스 내부는 세로 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    box-sizing: border-box; /* 크기 계산 포함 */
+    margin: 0 auto; /* 중앙 정렬 */
+    max-width: 300px; /* 박스 최대 너비 */
+}
+
+.typing_userBox_animation1{
+    width: 234px;
+    height: 274px;
+    z-index: 2;
+    position: absolute;
+    display: none;
+}
+
+.typing_userBox_animation2{
+    position: relative;
+    width: 234px;
+    height: 274px;
+    z-index: 1;
+}
+
+.typing_userBox1{
+    width: 235px;
+    height: 235px;
+    background-color: white;
+    border-radius: 25px 25px 0px 0px;
+    border: 2px solid #D3D3D3;
+    border-bottom: 0px;
+    text-align: center;
+}
+
+.typing_userBox1_detail img{
+    margin-top: 25px;
+    width: 120px;
+    height: 105px;
+}
+
+.typing_userBox1_box{
+    width: 235px;
+    height: 48px;
+    background-color: #E5F0FF;
+    border: 2px solid #97B4DE;
+    border-radius: 0px 0px 25px 25px;
+}
+
+.typing_userBox2{
+    width: 235px;
+    height: 270px;
+    background-color: white;
+    border: 2px solid #D3D3D3;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.typing_userBox2 img{
+    margin: 15px 0 10px 0;
+    width: 100px;
+    height: 100px;
+}
+
+.typing_userBox2_detail table{
+    border-top: 2px solid lightgray;
+    width: 210px;
+}
+
+.typing_userBox2_detail td{
+    padding-left: 25px;
+    height: 30px;
+    font-weight:bold;
+}
+
+.typing_userBox2_detail button{
+    width: 135px;
+    height: 40px;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: 0px;
+    background-color: #0074BD;
+    color: white;
+    font-size: 15px;
+}
+
+.typing_userBox2_detail button:hover{
+    background-color: #16699c;
+}
+
