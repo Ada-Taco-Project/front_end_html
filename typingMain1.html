@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타자하기</title>
+    <link rel="stylesheet" href="./typingMain1.css">
+</head>
+<script>
+    function reset(){
+        set.location.href='./typingMain1.html';
+    }
+</script>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar_logo">
+                <h1><a href="">타코</a></h1>
+            </div>
+
+            <ul class="navbar_menu">
+                <li><a href=""><b>타자하기</b></a></li>
+                <li><a href=""><b>타자 랭킹</b></a></li>
+                <li><a href=""><b>문의하기</b></a></li>
+            </ul>
+
+            <ul class="navbar_users">
+                <li><a href="">회원가입</a></li>
+                <li><a href="" onclick="">로그인</a></li> <!--로그인기능과 연결할 때 onclick없애주세요-->
+                <li>
+                <a href="">
+                    <div class="navbar_box">
+                        <img src="https://github.com/Ada-Taco-Project/imgs/blob/main/mdi--person.png?raw=true" alt="프로필사진">
+                    </div>
+                </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="typing_container">
+        <div class="typing_button_container">
+            <div class="typing_button_box">
+                <input type="button" value="이전으로 돌아가기" onclick="back()"> <br>
+                <input type="button" value="다시하기" onclick="reset()">
+            </div>
+        </div>
+        
+        <div class="typing_view_container">
+            <div class="typing_view_box">
+                <div class="typing_view_text">
+                    <h1>K</h1>
+                </div>
+                <div class="typing_view_input_box">
+                    <input type="input" class="typing_view_input" >
+                </div>
+            </div>
+            <div class="typing_view_keyboard_container">
+                <div class="typing_view_keyboard_box">
+                    <div class="keyboard_line">
+                        <div class="keyboard_key">
+                            <span class="key1">~</span><br>
+                            <span class="key2">`</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">!</span><br>
+                            <span class="key2">1</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">@</span><br>
+                            <span class="key2">2</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">#</span><br>
+                            <span class="key2">3</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">$</span><br>
+                            <span class="key2">4</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">%</span><br>
+                            <span class="key2">5</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">^</span><br>
+                            <span class="key2">6</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">&</span><br>
+                            <span class="key2">7</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">*</span><br>
+                            <span class="key2">8</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">(</span><br>
+                            <span class="key2">9</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">)</span><br>
+                            <span class="key2">0</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">_</span><br>
+                            <span class="key2">-</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">+</span><br>
+                            <span class="key2">=</span>
+                        </div>
+                        <div class="keyboard_key" id="Backspace">
+                            <span class="key1"></span><br>
+                            <span class="key2">Backspace</span>
+                        </div>
+                    </div>
+                    <div class="keyboard_line">
+                        <div class="keyboard_key" id="Tab">
+                            <span class="key1"></span><br>
+                            <span class="key2">Tab</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">Q</span><br>
+                            <span class="key2">q</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">W</span><br>
+                            <span class="key2">w</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">E</span><br>
+                            <span class="key2">e</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">R</span><br>
+                            <span class="key2">r</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">T</span><br>
+                            <span class="key2">t</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">Y</span><br>
+                            <span class="key2">y</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">U</span><br>
+                            <span class="key2">u</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">I</span><br>
+                            <span class="key2">i</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">O</span><br>
+                            <span class="key2">o</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">P</span><br>
+                            <span class="key2">p</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">{</span><br>
+                            <span class="key2">[</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">}</span><br>
+                            <span class="key2">]</span>
+                        </div>
+                        <div class="keyboard_key" id="Backslash">
+                            <span class="key1">|</span><br>
+                            <span class="key2">\</span>
+                        </div>
+                    </div>
+                    <div class="keyboard_line">
+                        <div class="keyboard_key" id="CapsLock">
+                            <span class="key1"></span><br>
+                            <span class="key2">CapsLock</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">A</span><br>
+                            <span class="key2">a</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">S</span><br>
+                            <span class="key2">s</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">D</span><br>
+                            <span class="key2">d</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">F</span><br>
+                            <span class="key2">f</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">G</span><br>
+                            <span class="key2">g</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">H</span><br>
+                            <span class="key2">h</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">J</span><br>
+                            <span class="key2">j</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">K</span><br>
+                            <span class="key2">k</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">L</span><br>
+                            <span class="key2">l</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">:</span><br>
+                            <span class="key2">;</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">"</span><br>
+                            <span class="key2">'</span>
+                        </div>
+                        <div class="keyboard_key" id="Enter">
+                            <span class="key1"></span><br>
+                            <span class="key2">Enter</span>
+                        </div>
+                    </div>
+                    <div class="keyboard_line">
+                        <div class="keyboard_key" id="Shift">
+                            <span class="key1"></span><br>
+                            <span class="key2">Shift</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">Z</span><br>
+                            <span class="key2">z</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">X</span><br>
+                            <span class="key2">x</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">C</span><br>
+                            <span class="key2">c</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">V</span><br>
+                            <span class="key2">v</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">B</span><br>
+                            <span class="key2">b</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">N</span><br>
+                            <span class="key2">n</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">M</span><br>
+                            <span class="key2">m</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1"><</span><br>
+                            <span class="key2">,</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">></span><br>
+                            <span class="key2">.</span>
+                        </div>
+                        <div class="keyboard_key">
+                            <span class="key1">?</span><br>
+                            <span class="key2">/</span>
+                        </div>
+                        <div class="keyboard_key" id="Shift">
+                            <span class="key1"></span><br>
+                            <span class="key2">Shift</span>
+                        </div>
+                    </div>
+                    <div class="keyboard_line">
+                        <div class="keyboard_key" id="other">
+                            <span class="key1"></span><br>
+                            <span class="key2">Ctrl</span>
+                        </div>
+                        <div class="keyboard_key" id="other">
+                            <span class="key1"></span><br>
+                            <span class="key2">Win</span>
+                        </div>
+                        <div class="keyboard_key" id="other">
+                            <span class="key1"></span><br>
+                            <span class="key2">Alt</span>
+                        </div>
+                        <div class="keyboard_key" id="space">
+                            <span class="key1"></span><br>
+                            <span class="key2"></span>
+                        </div>
+                        <div class="keyboard_key" id="other">
+                            <span class="key1"></span><br>
+                            <span class="key2">Alt</span>
+                        </div>
+                        <div class="keyboard_key" id="other">
+                            <span class="key1"></span><br>
+                            <span class="key2">Menu</span>
+                        </div>
+                        <div class="keyboard_key" id="other">
+                            <span class="key1"></span><br>
+                            <span class="key2">Fn</span>
+                        </div>
+                        <div class="keyboard_key" id="other">
+                            <span class="key1"></span><br>
+                            <span class="key2">Ctrl</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="typing_profile_container">
+            <div class="typing_profile_box">
+                <div class="profile_img_box">
+                    <img src="https://github.com/Ada-Taco-Project/imgs/blob/main/mdi--person.png?raw=true">
+                </div>
+                <h3 style="text-align: center;">게스트</h3>
+                <h4>현재 진행상황</h4>
+                <div class="profil_box_border"></div>
+                <table class="profile_detail_box">
+                    <tr>
+                        <td align="left">진행상황</td>
+                        <td align="right">00:28</td>
+                    </tr>
+                    <tr>
+                        <td align="left">정확도</td>
+                        <td align="right">99%</td>
+                    </tr>
+                    <tr>
+                        <td align="left">현재타수</td>
+                        <td align="right">274타</td>
+                    </tr>
+                    <tr>
+                        <td align="left">평균타수</td>
+                        <td align="right">246타</td>
+                    </tr>
+                    <tr>
+                        <td align="left">최대타수</td>
+                        <td align="right">312타</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
